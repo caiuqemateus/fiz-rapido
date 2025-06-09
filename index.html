@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta name="viewport" content="width=1200, initial-scale=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    
+    <title>Loteria dos Sapos - Design Moderno</title>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header class="game-header">
+            <div class="logo">
+                <span class="logo-icon">🐸</span>
+                <h1 class="logo-text">Loteria dos Sapos</h1>
+            </div>
+            <div class="header-balance">
+                <span class="header-balance-label">Saldo:</span>
+                <span class="header-balance-value">R$ 2.172,50</span>
+            </div>
+            <nav class="nav-buttons">
+    <div class="settings-dropdown">
+        <button class="nav-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15c.8 1.7.9 3.5.1 5.1-8.6 8.6-22.4 8.6-31 0a5.4 5.4 0 0 1 0-7.6"/>
+                <path d="M12 5V3"/>
+                <path d="M17 6.4L18.4 5"/>
+                <path d="M19 12h2"/>
+                <path d="M17 17.6L18.4 19"/>
+                <path d="M12 19v2"/>
+                <path d="M7 17.6L5.6 19"/>
+                <path d="M5 12H3"/>
+                <path d="M7 6.4L5.6 5"/>
+            </svg>
+            Configurações
+        </button>
+        <div class="settings-menu">
+            <button class="settings-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Perfil
+            </button>
+            <!-- Modifique o botão de som no menu -->
+<button class="settings-item" id="soundSettingsBtn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+    Som
+</button>
+            <button class="settings-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Histórico
+            </button>
+            <button class="settings-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                Geral
+            </button>
+            <button class="settings-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"></path><path d="M6 18h12"></path><path d="M6 14h12"></path><path d="M6 10h12"></path></svg>
+                Modo Teste
+            </button>
+        </div>
+    </div>
+</nav>
+        </header>
+
+        <div class="main-content">
+            <section class="hero">
+                <div class="hero-content">
+                    <h2 class="hero-title">A Loteria Mais Divertida da Web!</h2>
+                    <p class="hero-subtitle">Escolha seus sapos da sorte e concorra a prêmios incríveis. Uma experiência de loteria online moderna e envolvente.</p>
+                    <div class="hero-buttons">
+                        <button class="hero-button primary">Participar</button>
+                        <button class="hero-button secondary">Como Funciona?</button>
+                    </div>
+                </div>
+                <div class="hero-decoration" style="background: linear-gradient(45deg, var(--primary-color) 30%, var(--secondary-color) 90%); border-radius: 50%;"></div>
+            </section>
+
+            <aside class="sidebar">
+                <div class="user-balance">
+                    <div class="balance-header">
+                        <h3 class="balance-title">Seu Saldo</h3>
+                        <div class="balance-actions">
+                            <button class="balance-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-circle"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></button>
+                            <button class="balance-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-circle"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg></button>
+                        </div>
+                    </div>
+                    <div class="balance-amount">
+                        <p class="balance-label">Saldo Atual</p>
+                        <p class="balance-value">R$ 2.172,50</p>
+                    </div>
+                    <div class="balance-buttons">
+                        <button class="balance-button primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet"><path d="M21 12V6a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6"/><path d="M17 13v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="3 9 9 3 15 9"/></svg> Depositar</button>
+                        <button class="balance-button secondary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-to-line"><path d="M12 17v4"/><path d="M5 21h14"/><path d="M12 11l-4 4 4 4"/></svg> Sacar</button>
+                    </div>
+                </div>
+
+                <div class="jackpot">
+                    <h3 class="jackpot-title">Jackpot Atual</h3>
+                    <p class="jackpot-amount">R$ 100.097,06</p>
+                    <p class="jackpot-description">O prêmio está crescendo! Faça sua aposta e concorra.</p>
+                    <div class="jackpot-timer">
+                        <div class="timer-box">
+                            <span class="timer-value">23</span>
+                            <span class="timer-label">Horas</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="timer-value">59</span>
+                            <span class="timer-label">Minutos</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="timer-value">32</span>
+                            <span class="timer-label">Segundos</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <section class="game-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-title-icon">🐸</span>
+                    Escolha seus Sapos da Sorte
+                </h2>
+                <div class="section-actions">
+                     <!-- Botão removido -->
+                </div>
+            </div>
+            <div class="frog-grid">
+                <div class="frog-card frog-type-1">
+                    <div class="frog-card-inner">
+                        <img src="/api/placeholder/80/80/00E676/FFFFFF?text=S1" alt="Sapo 1" class="frog-image">
+                    </div>
+                    <div class="frog-card-bg"></div>
+                </div>
+                <div class="frog-card frog-type-2">
+                    <div class="frog-card-inner">
+                        <img src="/api/placeholder/80/80/00BCD4/FFFFFF?text=S2" alt="Sapo 2" class="frog-image">
+                    </div>
+                    <div class="frog-card-bg"></div>
+                </div>
+                <div class="frog-card frog-type-3">
+                    <div class="frog-card-inner">
+                        <img src="/api/placeholder/80/80/FF4081/FFFFFF?text=S3" alt="Sapo 3" class="frog-image">
+                    </div>
+                    <div class="frog-card-bg"></div>
+                </div>
+                <div class="frog-card frog-type-4">
+                    <div class="frog-card-inner">
+                        <img src="/api/placeholder/80/80/FFAB00/FFFFFF?text=S4" alt="Sapo 4" class="frog-image">
+                    </div>
+                    <div class="frog-card-bg"></div>
+                </div>
+                <div class="frog-card frog-type-5">
+                    <div class="frog-card-inner">
+                        <img src="/api/placeholder/80/80/9C27B0/FFFFFF?text=S5" alt="Sapo 5" class="frog-image">
+                    </div>
+                    <div class="frog-card-bg"></div>
+                </div>
+                <div class="frog-card frog-type-6">
+                    <div class="frog-card-inner">
+                        <img src="/api/placeholder/80/80/607D8B/FFFFFF?text=S6" alt="Sapo 6" class="frog-image">
+                    </div>
+                    <div class="frog-card-bg"></div>
+                </div>
+                <!-- Repete os sapos de 7 a 12 -->
+                <div class="frog-card frog-type-1">
+                    <div class="frog-card-inner">
+                        <img src="/api/placeholder/80/80/00E676/FFFFFF?text=S7" alt="Sapo 7" class="frog-image">
+                    </div>
+                    <div class="frog-card-bg"></div>
+                </div>
+                <div class="frog-card frog-type-2">
+                    <div class="frog-card-inner">
+                        <img src="/api/placeholder/80/80/00BCD4/FFFFFF?text=S8" alt="Sapo 8" class="frog-image">
+                    </div>
+                    <div class="frog-card-bg"></div>
+                </div>
+                <div class="frog-card frog-type-3">
+                    <div class="frog-card-inner">
+                        <img src="/api/placeholder/80/80/FF4081/FFFFFF?text=S9" alt="Sapo 9" class="frog-image">
+                    </div>
+                    <div class="frog-card-bg"></div>
+                </div>
+                <div class="frog-card frog-type-4">
+                    <div class="frog-card-inner">
+                        <img src="/api/placeholder/80/80/FFAB00/FFFFFF?text=S10" alt="Sapo 10" class="frog-image">
+                    </div>
+                    <div class="frog-card-bg"></div>
+                </div>
+                <div class="frog-card frog-type-5">
+                    <div class="frog-card-inner">
+                        <img src="/api/placeholder/80/80/9C27B0/FFFFFF?text=S11" alt="Sapo 11" class="frog-image">
+                    </div>
+                    <div class="frog-card-bg"></div>
+                </div>
+                <div class="frog-card frog-type-6">
+                    <div class="frog-card-inner">
+                        <img src="/api/placeholder/80/80/607D8B/FFFFFF?text=S12" alt="Sapo 12" class="frog-image">
+                    </div>
+                    <div class="frog-card-bg"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="selected-frogs">
+            <div class="selected-frogs-header">
+                <div class="header-left">
+                    <h3 class="selected-frogs-title">Sapos Selecionados</h3>
+                    <span class="selected-frogs-count">0/6</span>
+                </div>
+                <div class="header-actions">
+                    <button class="action-button warning quick-select">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap">
+                            <polygon points="13 2 3 14 12 15 11 22 21 10 12 9 13 2"/>
+                        </svg>
+                        Seleção Rápida
+                    </button>
+                    <label class="toggle-switch">
+                        <input type="checkbox" class="toggle-input">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="selected-frogs-grid">
+                <div class="selected-frog-slot empty"></div>
+                <div class="selected-frog-slot empty"></div>
+                <div class="selected-frog-slot empty"></div>
+                <div class="selected-frog-slot empty"></div>
+                <div class="selected-frog-slot empty"></div>
+                <div class="selected-frog-slot empty"></div>
+            </div>
+        </section>
+
+        <section class="bet-controls">
+            <div class="bet-input-group">
+                <span class="bet-currency">R$</span>
+                <input type="number" 
+                       class="bet-input" 
+                       placeholder="Valor da Aposta" 
+                       min="0.50" 
+                       step="0.01" 
+                       value="0.50">
+            </div>
+       <!-- Modifique a div do bet-multiplier no seu HTML -->
+        <div class="bet-multiplier hidden">
+    <button class="multiplier-button">-</button>
+    <input type="number" 
+           id="autoPlayCount" 
+           class="multiplier-value" 
+           value="1" 
+           min="1" 
+           max="100" 
+           placeholder="Jogadas">
+    <button class="multiplier-button">+</button>
+</div>
+        </section>
+
+        <div class="bet-amount-presets">
+            <button class="preset-button">R$ 10</button>
+            <button class="preset-button active">R$ 50</button>
+            <button class="preset-button">R$ 100</button>
+            <button class="preset-button">R$ 500</button>
+            <button class="preset-button">Máximo</button>
+        </div>
+
+        <div class="action-buttons">
+            <button class="action-button secondary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw"><path d="M3 12a9 9 0 1 1 15.02 8.7"/><path d="M3 12H5v2"/></svg> Limpar Aposta</button>
+            <button class="action-button primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play"><polygon points="5 3 19 12 5 21 5 3"/></svg> Fazer Aposta</button>
+        </div>
+        <section class="game-results">
+            <div class="results-header">
+                <h2 class="results-title">Resultado da Rodada</h2>
+            </div>
+            <div class="results-grid">
+                <div class="result-frog"><img src="/api/placeholder/80/80/00E676/FFFFFF?text=S1" alt="Sapo 1"></div>
+                <div class="result-frog winner"><img src="/api/placeholder/80/80/00BCD4/FFFFFF?text=S2" alt="Sapo 2"></div>
+                <div class="result-frog"><img src="/api/placeholder/80/80/FF4081/FFFFFF?text=S3" alt="Sapo 3"></div>
+                <div class="result-frog"><img src="/api/placeholder/80/80/FFAB00/FFFFFF?text=S4" alt="Sapo 4"></div>
+                <div class="result-frog"><img src="/api/placeholder/80/80/9C27B0/FFFFFF?text=S5" alt="Sapo 5"></div>
+                <div class="result-frog"><img src="/api/placeholder/80/80/607D8B/FFFFFF?text=S6" alt="Sapo 6"></div>
+            </div>
+            <p class="result-message win">Você ganhou! O sapo sortudo foi o S2.</p>
+        </section>
+
+        <section class="game-history">
+            <div class="history-header">
+                <h2 class="history-title">Histórico de Jogos</h2>
+                <!-- Linha removida -->
+            </div>
+            <ul class="history-list">
+                <li class="history-item">
+                    <div class="history-details">
+                        <p class="history-bet">Aposta: R$ 50 (Sapo 3, Sapo 6)</p>
+                        <span class="history-date">Ontem às 20:15</span>
+                    </div>
+                    <span class="history-result lose">Perdeu</span>
+                </li>
+                <li class="history-item">
+                    <div class="history-details">
+                        <p class="history-bet">Aposta: R$ 100 (Sapo 2)</p>
+                        <span class="history-date">Ontem às 18:50</span>
+                    </div>
+                    <span class="history-result win">+ R$ 350</span>
+                </li>
+                <li class="history-item">
+                    <div class="history-details">
+                        <p class="history-bet">Aposta: R$ 25 (Sapo 1, Sapo 4, Sapo 5)</p>
+                        <span class="history-date">Ontem às 15:30</span>
+                    </div>
+                    <span class="history-result lose">Perdeu</span>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+
+<!-- Adicione após a div.container e antes do script -->
+    <div id="rulesModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <header>
+            <div class="logo">
+                <div class="frog-icon">🐸</div>
+                <span>Loteria dos Sapos</span>
+            </div>
+        </header>
+        
+        <main>
+            <div class="card">
+                <h1>Como Funciona?</h1>
+                <p>A Loteria dos Sapos é uma experiência de jogo moderna e divertida. Selecione seus sapos da sorte e concorra a prêmios incríveis!</p>
+                
+                <div class="step-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Selecione 6 Sapos</h3>
+                        <p>Escolha 6 sapos no total. Você pode repetir o mesmo sapo até 6 vezes!</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Faça sua Aposta</h3>
+                        <p>O valor mínimo de aposta é de R$ 10,00. Quanto maior sua aposta, maiores suas chances de ganhar!</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Aguarde o Sorteio</h3>
+                        <p>Aguarde o sorteio dos 6 sapos da rodada e veja se você ganhou!</p>
+                        <div class="sequence-example">
+                            <div class="mini-frog"></div>
+                            <div class="mini-frog"></div>
+                            <div class="mini-frog"></div>
+                            <div class="mini-frog"></div>
+                            <div class="mini-frog"></div>
+                            <div class="mini-frog"></div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Seleção Rápida</h3>
+                        <p>Use o botão "Seleção Rápida" para escolher 6 sapos aleatoriamente com um único clique!</p>
+                        <div class="feature-preview">
+                            <button class="preview-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 15 11 22 21 10 12 9 13 2"/>
+                                </svg>
+                                Seleção Rápida
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <h3>Aposta Automática</h3>
+                        <p>Ative o modo automático para fazer várias apostas consecutivas:</p>
+                        <div class="feature-preview">
+                            <div class="auto-play-demo">
+                                <label class="toggle-switch">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <div class="auto-play-info">
+                                    <p>1. Ative o toggle "AUTO"</p>
+                                    <p>2. Escolha o número de jogadas (1-100)</p>
+                                    <p>3. O sistema fará as apostas automaticamente</p>
+                                    <p class="warning">⚠️ Certifique-se de ter saldo suficiente para todas as jogadas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    Prêmios
+                </h2>
+                <p>Sua premiação depende da combinação conseguida. Quanto melhor a combinação, maior será o multiplicador!</p>
+                <table class="prizes-table">
+                    <thead>
+                        <tr>
+                            <th>Combinação</th>
+                            <th>Descrição</th>
+                            <th>Multiplicador</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sequência Completa</td>
+                            <td>6 sapos iguais nas mesmas posições</td>
+                            <td class="jackpot-highlight">Jackpot ou 1000x</td>
+                        </tr>
+                        <tr>
+                            <td>Quina</td>
+                            <td>5 sapos iguais em sequência</td>
+                            <td>500x</td>
+                        </tr>
+                        <tr>
+                            <td>Quadra</td>
+                            <td>4 sapos iguais em sequência</td>
+                            <td>100x</td>
+                        </tr>
+                        <tr>
+                            <td>Tripla</td>
+                            <td>3 sapos iguais em sequência</td>
+                            <td>25x</td>
+                        </tr>
+                        <tr>
+                            <td>Par</td>
+                            <td>2 sapos iguais em sequência</td>
+                            <td>5x</td>
+                        </tr>
+                        <tr>
+                            <td>Acertos Simples</td>
+                            <td>2 e 3 sapos iguais em posições exatas (sem sequência)</td>
+                            <td>
+                                2 sapos: 2x<br>
+                                3 sapos: 3x<br>
+                               
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h2>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    Dicas para Jogar
+                </h2>
+                <p>Aumente suas chances de ganhar com essas dicas:</p>
+                <div class="tips">
+                    <div class="tip">
+                        <p>Você pode clicar em um sapo várias vezes</p>
+                    </div>
+                    <div class="tip">
+                        <p>O contador mostra quantas vezes selecionou cada sapo</p>
+                    </div>
+                    <div class="tip">
+                        <p>Use o botão "Limpar" para recomeçar a seleção</p>
+                    </div>
+                    <div class="tip">
+                        <p>Observe o histórico para aprender padrões</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+
+<!-- Modal PIX -->
+<div id="pixModal" class="modal">
+    <div class="modal-content pix-modal">
+        <span class="close-modal" id="closePixModal">&times;</span>
+        <div class="pix-container">
+            <h2>Depósito via PIX</h2>
+            
+            <div class="pix-warning">
+                <svg xmlns="00fab11c-8d66-4f9a-83c4-078a765aaca4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <h3>AVISO IMPORTANTE</h3>
+                <p>O sistema de Depósito via PIX está temporariamente indisponível.</p>
+                <p>Caso realize um depósito neste momento, o valor será enviado diretamente aos desenvolvedores e não será adicionado à sua conta.</p>
+                <p>Se deseja apenas adicionar saldo para testar o jogo, utilize os botões + e - localizados na parte superior da tela.</p>
+                <p>Agradecemos sua compreensão!</p>
+            </div>
+
+            <div class="pix-qr-container">
+                <img src="https://i.postimg.cc/pdVp5T1t/eae59cda-e58b-4316-af6b-1dd991dc95b9.jpg" alt="QR Code PIX" class="pix-qr">
+            </div>
+            <div class="pix-info">
+                <p class="pix-instruction">Escaneie o QR Code ou copie a chave PIX abaixo:</p>
+                <div class="pix-key-container">
+                    <input type="text" id="pixKey" value="00fab11c-8d66-4f9a-83c4-078a765aaca4" readonly>
+                    <button id="copyPixKey" class="copy-button">
+                        <svg xmlns="00fab11c-8d66-4f9a-83c4-078a765aaca4" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="game-footer">
+        <p>&copy; 2025 Loteria dos Sapos. Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Termos de Serviço</a>
+            <a href="#" class="footer-link">Política de Privacidade</a>
+            <a href="#" class="footer-link">Suporte</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- Pop-ups de Vitória -->
+<div class="popup-overlay" id="popup-simples">
+    <div class="popup popup-simples">
+        <button class="close-btn" onclick="closePopup('simples')">&times;</button>
+        <div class="content">
+            <h2>🎉 PARABÉNS! 🎉</h2>
+            <div class="sapo-icon">🐸</div>
+            <h3>Acerto Simples!</h3>
+            <div class="premio-valor">R$ 50,00</div>
+            <p>Você acertou um sapo da sorte!</p>
+            <button class="claim-btn" onclick="closePopup('simples')">Resgatar Prêmio</button>
+        </div>
+    </div>
+</div>
+
+<div class="popup-overlay" id="popup-dupla">
+    <div class="popup popup-dupla">
+        <button class="close-btn" onclick="closePopup('dupla')">&times;</button>
+        <div class="content">
+            <h2>🌟 EXCELENTE! 🌟</h2>
+            <div class="sapos-dupla">
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+            </div>
+            <h3>Dupla Premiada!</h3>
+            <div class="premio-valor">R$ 250,00</div>
+            <p>Dois sapos da sorte em uma jogada!</p>
+            <button class="claim-btn" onclick="closePopup('dupla')">Resgatar Prêmio</button>
+        </div>
+    </div>
+</div>
+
+<div class="popup-overlay" id="popup-tripla">
+    <div class="popup popup-tripla">
+        <button class="close-btn" onclick="closePopup('tripla')">&times;</button>
+        <div class="content">
+            <h2>🔥 INCRÍVEL! 🔥</h2>
+            <div class="sapos-tripla">
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+            </div>
+            <h3>Tripla Sensacional!</h3>
+            <div class="premio-valor">R$ 1.500,00</div>
+            <p>Três sapos da sorte! Que sorte incrível!</p>
+            <button class="claim-btn" onclick="closePopup('tripla')">Resgatar Prêmio</button>
+        </div>
+    </div>
+</div>
+
+<div class="popup-overlay" id="popup-quarta">
+    <div class="popup popup-quarta">
+        <button class="close-btn" onclick="closePopup('quarta')">&times;</button>
+        <div class="content">
+            <h2>⚡ FANTÁSTICO! ⚡</h2>
+            <div class="sapos-quarta">
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+            </div>
+            <h3>Quarta Épica!</h3>
+            <div class="premio-valor">R$ 8.000,00</div>
+            <p>Quatro sapos da sorte! Você é um verdadeiro campeão!</p>
+            <button class="claim-btn" onclick="closePopup('quarta')">Resgatar Prêmio</button>
+        </div>
+    </div>
+</div>
+
+<div class="popup-overlay" id="popup-quina">
+    <div class="popup popup-quina">
+        <button class="close-btn" onclick="closePopup('quina')">&times;</button>
+        <div class="content">
+            <h2>🔥 QUINA LENDÁRIA! 🔥</h2>
+            <div class="sapos-quina">
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+            </div>
+            <h3>CINCO SAPOS EM SEQUÊNCIA!</h3>
+            <div class="premio-valor">R$ 50.000,00</div>
+            <p>SEQUÊNCIA PERFEITA! VOCÊ É UMA LENDA!</p>
+            <button class="claim-btn" onclick="closePopup('quina')">Resgatar Prêmio</button>
+        </div>
+    </div>
+</div>
+
+<div class="popup-overlay" id="popup-jackpot">
+    <div class="popup popup-jackpot">
+        <button class="close-btn" onclick="closePopup('jackpot')">&times;</button>
+        <div class="content">
+            <h2>💰 JACKPOT! 💰</h2>
+            <div class="sapos-jackpot">
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+                <div class="sapo-icon">🐸</div>
+            </div>
+            <h3>JACKPOT HISTÓRICO!</h3>
+            <div class="premio-valor"></div>
+            <p>VOCÊ GANHOU O GRANDE PRÊMIO!</p>
+            <button class="claim-btn" onclick="closePopup('jackpot')">RESGATAR JACKPOT</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Perfil -->
+<div id="profileModal" class="modal">
+    <div class="modal-content profile-modal">
+        <span class="close-modal" id="closeProfileModal">&times;</span>
+        <div class="profile-container">
+            <h2>Seu Perfil</h2>
+            
+            <div class="profile-avatar-section">
+                <div class="avatar-container">
+                    <img id="userAvatar" src="https://i.postimg.cc/ZKcRmWv8/default-avatar.png" alt="Avatar do usuário">
+                    <button class="change-avatar-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                            <circle cx="12" cy="13" r="4"/>
+                        </svg>
+                    </button>
+                    <input type="file" id="avatarInput" accept="image/*" hidden>
+                </div>
+            </div>
+
+            <div class="profile-form">
+                <div class="form-group">
+                    <label for="userName">Nome do Jogador</label>
+                    <input type="text" id="userName" placeholder="Seu nome" maxlength="20">
+                </div>
+
+                <div class="form-group">
+                    <label for="userEmail">Email</label>
+                    <input type="email" id="userEmail" placeholder="seu.email@gmail.com">
+                </div>
+
+                <button class="save-profile-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                        <polyline points="17 21 17 13 7 13 7 21"/>
+                        <polyline points="7 3 7 8 15 8"/>
+                    </svg>
+                    Salvar Alterações
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Som -->
+<div id="soundModal" class="modal">
+    <div class="modal-content sound-modal">
+        <span class="close-modal" id="closeSoundModal">&times;</span>
+        <div class="sound-container">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                </svg>
+                Configurações de Som
+            </h2>
+
+            <div class="sound-settings">
+                <div class="sound-control">
+                    <label>Volume Geral</label>
+                    <div class="volume-control">
+                        <button class="volume-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                            </svg>
+                        </button>
+                        <input type="range" id="masterVolume" min="0" max="100" value="100">
+                        <span class="volume-value">100%</span>
+                    </div>
+                </div>
+
+                <div class="sound-control">
+                    <label>Silenciar Tudo</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="muteAll">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <button class="save-sound-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                        <polyline points="17 21 17 13 7 13 7 21"/>
+                        <polyline points="7 3 7 8 15 8"/>
+                    </svg>
+                    Salvar Configurações
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Histórico -->
+<div id="historyModal" class="modal">
+    <div class="modal-content history-modal">
+        <span class="close-modal" id="closeHistoryModal">&times;</span>
+        <div class="history-container">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                Seu Histórico de Jogadas
+            </h2>
+
+            <div class="history-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <span class="stat-value">R$ 0,00</span>
+                    <span class="stat-label">Total Ganho</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎮</div>
+                    <span class="stat-value">0</span>
+                    <span class="stat-label">Total de Jogadas</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
+                    <span class="stat-value">0%</span>
+                    <span class="stat-label">Taxa de Vitória</span>
+                </div>
+            </div>
+
+            <div class="history-filters">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="wins">Vitórias</button>
+                    <button class="filter-btn" data-filter="losses">Derrotas</button>
+                </div>
+                <div class="search-group">
+                    <input type="text" placeholder="Buscar jogada..." class="history-search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="history-entries">
+                <!-- Os itens do histórico serão inseridos aqui via JavaScript -->
+            </div>
+
+            <div class="history-pagination">
+                <button class="pagination-btn" data-page="prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </button>
+                <span class="page-info">Página 1 de 1</span>
+                <button class="pagination-btn" data-page="next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Configurações Gerais -->
+<div id="generalSettingsModal" class="modal">
+    <div class="modal-content settings-modal">
+        <span class="close-modal" id="closeGeneralSettingsModal">&times;</span>
+        <div class="settings-container">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+                Configurações Gerais
+            </h2>
+
+            <div class="settings-section">
+                <h3>Aparência</h3>
+                <div class="setting-item">
+                    <label>Modo Escuro</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Notificações</h3>
+                <div class="setting-item">
+                    <label>Notificações do Jogo</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="gameNotifications">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>Notificações de Vitórias</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="winNotifications">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>Notificações de Jackpot</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="jackpotNotifications">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Idioma</h3>
+                <div class="setting-item">
+                    <label>Selecionar Idioma</label>
+                    <select id="languageSelect" class="settings-select">
+                        <option value="pt-BR">Português (Brasil)</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Ações</h3>
+                <div class="settings-actions">
+                    <button class="settings-btn danger" id="resetSettings">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                            <path d="M21 3v5h-5"/>
+                        </svg>
+                        Restaurar Padrões
+                    </button>
+                    <button class="settings-btn success" id="saveGeneralSettings">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                            <polyline points="17 21 17 13 7 13 7 21"/>
+                            <polyline points="7 3 7 8 15 8"/>
+                        </svg>
+                        Salvar Alterações
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Modo Teste -->
+<div id="testModeModal" class="modal">
+    <div class="modal-content test-mode-modal">
+        <span class="close-modal" id="closeTestModeModal">&times;</span>
+        <div class="test-mode-container">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"></path>
+                    <path d="M6 18h12"></path>
+                    <path d="M6 14h12"></path>
+                    <path d="M6 10h12"></path>
+                </svg>
+                Modo Teste
+            </h2>
+
+            <div class="test-mode-settings">
+                <div class="test-mode-section">
+                    <h3>Configurações Gerais</h3>
+                    <div class="test-mode-control">
+                        <label>Ativar Modo Teste</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="testModeToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="test-mode-section">
+                    <h3>Taxa de Vitória</h3>
+                    <div class="test-mode-control">
+                        <label>Definir Taxa de Vitória (%)</label>
+                        <input type="number" id="winRateInput" min="0" max="100" value="50">
+                    </div>
+                </div>
+
+                <div class="test-mode-section">
+                    <h3>Saldo</h3>
+                    <div class="test-mode-control">
+                        <label>Definir Saldo (R$)</label>
+                        <input type="number" id="balanceInput" min="0" step="0.01" value="1000.00">
+                    </div>
+                </div>
+
+                <div class="test-mode-section">
+                    <h3>Forçar Resultado</h3>
+                    <div class="test-mode-control">
+                        <label>Próxima Jogada</label>
+                        <select id="forceResultSelect" class="test-mode-select">
+                            <option value="random">Aleatório</option>
+                            <option value="simple">Acerto Simples</option>
+                            <option value="double">Dupla</option>
+                            <option value="triple">Tripla</option>
+                            <option value="quadra">Quadra</option>
+                            <option value="quina">Quina</option>
+                            <option value="jackpot">Jackpot</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="test-mode-section">
+                    <h3>Simulação</h3>
+                    <div class="test-mode-control">
+                        <label>Número de Jogadas</label>
+                        <input type="number" id="simulationCountInput" min="1" max="1000" value="10">
+                    </div>
+                    <button id="runSimulationBtn" class="test-mode-btn">
+                        Executar Simulação
+                    </button>
+                </div>
+
+                <div class="test-mode-section">
+                    <h3>Estatísticas de Teste</h3>
+                    <div class="test-stats">
+                        <div class="test-stat">
+                            <span class="stat-label">Total de Jogadas:</span>
+                            <span id="totalGamesStats" class="stat-value">0</span>
+                        </div>
+                        <div class="test-stat">
+                            <span class="stat-label">Vitórias:</span>
+                            <span id="totalWinsStats" class="stat-value">0</span>
+                        </div>
+                        <div class="test-stat">
+                            <span class="stat-label">Taxa Real:</span>
+                            <span id="actualWinRateStats" class="stat-value">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="test-mode-actions">
+                <button id="resetTestStats" class="test-mode-btn danger">
+                    Resetar Estatísticas
+                </button>
+                <button id="saveTestSettings" class="test-mode-btn success">
+                    Salvar Configurações
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
